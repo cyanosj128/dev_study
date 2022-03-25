@@ -16,6 +16,7 @@ function hasUsedAll(used) {
   return true;
 }
 
+
 function registerNumbers(numberStrArr, used, numberSet, str) {
   if (hasUsedAll(used)) return;
 
