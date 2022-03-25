@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import './App.css'
 import MapControlPanel from "./components/MapControlPanel";
 import MapSwitcher from './components/MapSwitcher'
+import {Coordinate, MapType} from "./types";
 import TestGoogleMap from "./components/TestGoogleMap";
 import TestMapControlPanel from "./components/TestMapControlPanel";
-import {Coordinate, MapType} from "./types";
 
 export type TestMode = 'EDIT' | 'FINISHED';
 
