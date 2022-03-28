@@ -3,7 +3,7 @@ const dx = [-1, 1, 0, 0];
 const dy = [0, 0, -1, 1];
 
 function solution(m, n, picture) {
-	const visitedPicture = picture.map(e => e.map(l => false));
+	const visitedPicture = picture.map(e => e.map(() => false));
 	
 	let area = 0;
 	let largest = 0;
@@ -13,12 +13,13 @@ function solution(m, n, picture) {
 			if (picture[y][x] === 0) continue;
 			
 			// visited의 순서가 중요!
-			// 방문 이전에 마크
+			// 상태가 생성될때 마크
 			if (visitedPicture[y][x]) continue;
 			visitedPicture[y][x] = true;
 			
 			const count = recur(y, x, picture, visitedPicture);
 			if (count > largest) largest = count;
+			
 			area++
 		}
 	}
@@ -37,7 +38,7 @@ function recur(y, x, picture, visitedPicture) {
 		if (visitedPicture[ny][nx] || picture[ny][nx] !== picture[y][x]) continue;
 		
 		// visited의 순서가 중요!
-		// 방문 이전에 마크
+		// 상태가 생성될때 마크
 		visitedPicture[ny][nx] = true;
 		c += recur(ny, nx, picture, visitedPicture);
 	}
