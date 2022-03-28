@@ -31,8 +31,8 @@ function registerNumbers(numberStrArr, used, numberSet, str) {
 
 function isPrime(number) {
   if (number === 0 || number === 1) return false;
-  for (let i = 2; i < number; i++) {
-    if (number % 2 === 0) return false;
+  for (let i = 2; i * i <= number; i++) {
+    if (number % i === 0) return false;
   }
   return true;
 }
