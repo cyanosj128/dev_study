@@ -1,4 +1,4 @@
-import {FamilyRole} from "./Type";
+import {FamilyRole, Occupation} from "./Type";
 import {Person} from "./Person";
 
 export class FamilyMember extends Person{
@@ -14,5 +14,9 @@ export class FamilyMember extends Person{
   
   answerFamilyRole() {
     console.log('i am a' + this.familyRole + 'in my family');
+  }
+  
+  changeOccupation(newOccupation: Occupation) {
+    this.occupation = newOccupation
   }
 }
