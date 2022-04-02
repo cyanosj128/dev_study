@@ -1,8 +1,10 @@
 import {Occupation} from "./Type";
 
 export class Person {
-  name: string;
-  birthday: number;
+  static id = '12345';
+  
+  readonly name: string;
+  readonly birthday: number;
   occupation: Occupation;
   
   constructor(name: string, birthday: number, occupation: Occupation) {
@@ -20,6 +22,10 @@ export class Person {
   }
   
   answerBirthday() {
+    return this.answerBirthdayImpl;
+  }
+  
+  private answerBirthdayImpl() {
     console.log('my birthday is' + new Date(this.birthday));
   }
 }
